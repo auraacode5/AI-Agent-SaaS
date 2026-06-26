@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // ── animation variants ────────────────────────────────────────────────────────
 const fadeUp = {
@@ -52,7 +52,7 @@ const DONUT_LEGEND = [
 ];
 
 const NAV_ITEMS = [
-  { icon: "ti-layout-dashboard", label: "Dashboard",    active: true  },
+  { icon: "ti-layout-dashboard", label: "Dashboard" },
   { icon: "ti-robot",            label: "Agents"                       },
   { icon: "ti-chart-line",       label: "Analytics"                    },
 ];
@@ -73,6 +73,7 @@ const STATUS_STYLES = {
 
 // ── sub-components ────────────────────────────────────────────────────────────
 function Sidebar() {
+  const [activeNav, setActiveNav] = React.useState("Dashboard");
   return (
     <aside className="w-[220px] min-w-[220px] flex flex-col px-3.5 py-5 bg-white/[0.04] border-r border-white/[0.08] backdrop-blur-xl relative z-10">
       <span className="font-display text-[17px] font-extrabold tracking-tight text-white px-1.5 mb-7">
